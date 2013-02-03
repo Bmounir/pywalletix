@@ -27,7 +27,7 @@ import requests
 class wallitex :
 
 	ApiKey,VendorId = -1 , -1
-	Apiurl = "https://www.walletix.com"
+	Apiurl = "https://www.walletix.com/"
 
 
 
@@ -38,28 +38,28 @@ class wallitex :
 	def generatePaymentCode(self,PurchaseID , Amount , CallbackUrl,format="json") :
 
 		payload = {
-			"vendorID":self.ApiKey, 
+			"vendorID":self.ApiKey,
 			"apiKey":self.VendorId,
 			"purchaseID":PurchaseID,
 			"amount" :Amount,
-			"callbackurl":CallbackUrl,	
+			"callbackurl":CallbackUrl,
 			"format":format,
 		   }
 
-		return self._Post("/sandbox/api/paymentcode",payload)
+		return self._Post("api/paymentcode",payload)
 		
 
 
 	def verifyPayment(self,PaymentID,format="json" ) :
 
 		payload = {
-			"vendorID":self.ApiKey, 
+			"vendorID":self.ApiKey,
 			"apiKey":self.VendorId,
-			"paiementCode":PaymentID,					
+			"paiementCode":PaymentID,		
 			"format":format,
 		   }
 
-		return self._Post("/sandbox/api/paymentverification",payload)
+		return self._Post("api/paymentverification",payload)
 
 
 
