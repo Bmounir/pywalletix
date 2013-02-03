@@ -1,0 +1,7 @@
+pywalletix is a wraper class around the walletix.com API ,the online payment solution,
+    	
+composed of a class with 3 methods :
+	*- generatePaymentCode
+	*- verifyPayment
+	*- deletePayment
+
