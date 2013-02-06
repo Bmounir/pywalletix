@@ -61,6 +61,17 @@ class wallitex :
 
 		return self._Post("api/paymentverification",payload)
 
+	def deletePayment(self,PaymentID,format="json" ) :
+
+		payload = {
+			"vendorID":self.ApiKey,
+			"apiKey":self.VendorId,
+			"paiementCode":PaymentID,		
+			"format":format,
+		   }
+ 
+
+		return self._Post("api/deletepayment",payload)
 
 
 
